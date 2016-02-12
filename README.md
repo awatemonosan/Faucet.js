@@ -9,23 +9,25 @@ An ES6 emitter class
 
 ## Usage
 
-  var Pidgey = require('pidgey');
-  
-  var emitter = new Pidgey();
-  emitter.on('test',function(resolve, reject, message){
-    console.log('it works');
-    resolve(message);
-  });
+```javascript
+var Pidgey = require('pidgey');
 
-  emitter.trigger('test')
-  .then(function(){
-    console.log(message);
-  });
+var emitter = new Pidgey();
+emitter.on('test',function(resolve, reject, message){
+  console.log('it works');
+  resolve(message);
+});
 
-  emitter.trigger('test', 'awesome');
-  // should output:
-  // 'it works'
-  // 'awesome'
+emitter.trigger('test')
+.then(function(){
+  console.log(message);
+});
+
+emitter.trigger('test', 'awesome');
+// should output:
+// 'it works'
+// 'awesome'
+```
 
 ## Tests
 
