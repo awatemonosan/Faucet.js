@@ -1,6 +1,6 @@
 'use strict'
 
-const Faucet = class {
+const Pidgey = class {
   constructor(){
     this.callbacks = {};
     this.callbackRefs = [];
@@ -72,4 +72,4 @@ const Faucet = class {
   }
 };
 
-module.exports = Faucet;
+module.exports = Pidgey;

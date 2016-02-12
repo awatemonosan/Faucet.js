@@ -1,12 +1,12 @@
 var should = require('chai').should();
 
-var Faucet = require('../index');
+var Pidgey = require('../index');
 
-describe('#Faucet', function() {
+describe('#Pidgey', function() {
 
   describe('.on', function() {
     it('registers a callback', function() {
-      emitter = new Faucet();
+      emitter = new Pidgey();
       emitter.count('test').should.equal(0);
       emitter.on('test',function(){});
       emitter.count('test').should.equal(1);
@@ -15,7 +15,7 @@ describe('#Faucet', function() {
 
   describe('.trigger', function() {
     it('calls a callback', function() {
-      emitter = new Faucet();
+      emitter = new Pidgey();
       emitter.on('good_event',function(resolve, reject){
         resolve();
       });
@@ -31,7 +31,7 @@ describe('#Faucet', function() {
     });
 
     it('passes arguments', function(){
-      emitter = new Faucet();
+      emitter = new Pidgey();
       emitter.on('event', function(resolve, reject){
         resolve();
       });

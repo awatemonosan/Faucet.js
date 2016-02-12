@@ -1,7 +1,7 @@
 {
-  "name": "faucet",
+  "name": "pidgey",
   "version": "0.1.0",
-  "description": "ES6 emitter class",
+  "description": "ES6 emitter class utilizing promises",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/awatemonosan/Faucet.js.git"
+    "url": "git+https://github.com/awatemonosan/Pidgey.js.git"
   },
   "keywords": [
     "event",
@@ -23,7 +23,7 @@
   "author": "John Winstead <awatemonosan@gmail.com> (johnwinstead.ninja)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/awatemonosan/Faucet.js/issues"
+    "url": "https://github.com/awatemonosan/Pidgey.js/issues"
   },
-  "homepage": "https://github.com/awatemonosan/Faucet.js#readme"
+  "homepage": "https://github.com/awatemonosan/Pidgey.js#readme"
 }
