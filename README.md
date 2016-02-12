@@ -1,22 +1,31 @@
-Faucet
+Pidgey
 =========
 
 An ES6 emitter class
 
 ## Installation
 
-  npm install faucet --save
+  npm install pidgey --save
 
 ## Usage
 
-  var Faucet = require('faucet');
+  var Pidgey = require('pidgey');
   
-  var emitter = new Faucet();
-  emitter.on('test',function(){
+  var emitter = new Pidgey();
+  emitter.on('test',function(resolve, reject, message){
     console.log('it works');
+    resolve(message);
   });
 
-  emitter.trigger('test');
+  emitter.trigger('test')
+  .then(function(){
+    console.log(message);
+  });
+
+  emitter.trigger('test', 'awesome');
+  // should output:
+  // 'it works'
+  // 'awesome'
 
 ## Tests
 
@@ -30,3 +39,4 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 ## Release History
 
 * 0.1.0 Initial release
+* 0.1.1 Readme fix, better usage example
