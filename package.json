@@ -1,6 +1,6 @@
 {
   "name": "pidgey",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "ES6 emitter class utilizing promises",
   "main": "index.js",
   "directories": {
