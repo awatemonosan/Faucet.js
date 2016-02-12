@@ -42,3 +42,4 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 
 * 0.1.0 Initial release
 * 0.1.1 Readme fix, better usage example
+* 0.1.2 Better Readme formatting
