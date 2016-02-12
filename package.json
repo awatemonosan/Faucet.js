@@ -1,0 +1,29 @@
+{
+  "name": "faucet",
+  "version": "0.1.0",
+  "description": "ES6 emitter class",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/awatemonosan/Faucet.js.git"
+  },
+  "keywords": [
+    "event",
+    "emitter",
+    "es6"
+  ],
+  "author": "John Winstead <awatemonosan@gmail.com> (johnwinstead.ninja)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/awatemonosan/Faucet.js/issues"
+  },
+  "homepage": "https://github.com/awatemonosan/Faucet.js#readme"
+}
