@@ -1,7 +1,7 @@
 {
   "name": "pidgey",
-  "version": "0.1.2",
-  "description": "ES6 emitter class utilizing promises",
+  "version": "0.1.5",
+  "description": "ES7 emitter class utilizing classes and promises",
   "main": "index.js",
   "directories": {
     "test": "test"

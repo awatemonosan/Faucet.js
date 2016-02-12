@@ -15,16 +15,17 @@ const Pidgey = class {
 
   trigger(event){
     var args = Array.prototype.slice.call(arguments,1);
+    
+    var that = this;
     return new Promise(function(resolve, reject){
-      var allCallbacks = this.callbacks.all || [];
-      var eventCallbacks = this.callbacks[event] || [];
+      var allCallbacks = that.callbacks.all || [];
+      var eventCallbacks = that.callbacks[event] || [];
       var callbacks = allCallbacks.concat(eventCallbacks);
 
       args = [resolve, reject].concat(args);
-
       callbacks.forEach(function(callback){
         if(callback===null) return;
-        callback.apply(this, args);
+        callback.apply(that, args);
       });
     });
   }

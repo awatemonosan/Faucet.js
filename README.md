@@ -1,7 +1,7 @@
 Pidgey
 =========
 
-An ES6 emitter class
+An ES7 emitter class utilizing promises
 
 ## Installation
 
@@ -18,12 +18,10 @@ emitter.on('test',function(resolve, reject, message){
   resolve(message);
 });
 
-emitter.trigger('test')
+emitter.trigger('test', 'awesome')
 .then(function(){
   console.log(message);
 });
-
-emitter.trigger('test', 'awesome');
 // should output:
 // 'it works'
 // 'awesome'
