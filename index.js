@@ -7,10 +7,12 @@ const Pidgey = class {
   }
 
   triggerDelay(event, msg, delay){
-    var that = this;
-    setTimeout(function(){
-      that.trigger(msg)
-    }, delay);
+    return new Promise(function(resolve, reject){
+      var that = this;
+      setTimeout(function(){
+        that.trigger(msg).then(resolve).catch(reject);
+      }, delay);
+    });
   }
 
   trigger(event){
@@ -21,13 +23,15 @@ const Pidgey = class {
     var args = Array.prototype.slice.call(arguments,1);
 
     var that = this;
-    return Promise.all(callbacks.map(function(callback){
+    var promises = callbacks.map(function(callback){
       return new Promise(function(resolve, reject){
         if(callback === null) return;
         var combinedArgs = [resolve, reject].concat(args);
         callback.callback.apply(that, combinedArgs);
       });
-    }));
+    });
+
+    return Promise.all(promises);
   }
 
   on(event, callback){

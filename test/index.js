@@ -1,10 +1,15 @@
 var should = require('chai').should();
+// var expect = require('chai').expect;
 
 var Pidgey = require('../index');
 
 describe('#Pidgey', function() {
-
   describe('.on', function() {
+    it('exists', function(){
+      emitter = new Pidgey();
+      should.exist(emitter.on);
+    });
+
     it('registers a callback', function() {
       emitter = new Pidgey();
       emitter.count('test').should.equal(0);
@@ -14,6 +19,10 @@ describe('#Pidgey', function() {
   });
 
   describe('.trigger', function() {
+    it('exists', function(){
+      emitter = new Pidgey();
+      should.exist(emitter.on);
+    });
     it('calls a callback', function() {
       emitter = new Pidgey();
       emitter.on('good_event',function(resolve, reject){
@@ -29,7 +38,6 @@ describe('#Pidgey', function() {
         throw 'bad_event should reject';
       });
     });
-
     it('passes arguments', function(){
       emitter = new Pidgey();
       emitter.on('event', function(resolve, reject){
@@ -41,6 +49,30 @@ describe('#Pidgey', function() {
       }).catch(function(){
         throw 'event should resolve';
       });
+    });
+  });
+  describe('.triggerDelay', function(){
+    it('exists', function(){
+      emitter = new Pidgey();
+      should.exist(emitter.triggerDelay);
+    });
+  });
+  describe('.once', function(){
+    it('exists', function(){
+      emitter = new Pidgey();
+      should.exist(emitter.once);
+    });
+  });
+  describe('.off', function(){
+    it('exists', function(){
+      emitter = new Pidgey();
+      should.exist(emitter.off);
+    });
+  });
+  describe('.count', function(){
+    it('exists', function(){
+      emitter = new Pidgey();
+      should.exist(emitter.count);
     });
   });
 
