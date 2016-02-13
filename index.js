@@ -25,7 +25,7 @@ const Pidgey = class {
       return new Promise(function(resolve, reject){
         if(callback === null) return;
         var combinedArgs = [resolve, reject].concat(args);
-        callback.apply(that, combinedArgs);
+        callback.callback.apply(that, combinedArgs);
       });
     }));
   }
@@ -34,10 +34,16 @@ const Pidgey = class {
     this.callbacks[event] = this.callbacks[event] || [];
 
     var callbackRefID = this.callbackRefs.length;
-    var bucketID = this.callbacks[event].length;
+    var bucketID = this.callbacks[event].length; // TODO: refactor this out
 
     this.callbacks[event].push(callback);
-    this.callbackRefs.push({event: event, id: bucketID});
+
+    this.callbackRefs.push({
+      event: event,
+      id: bucketID
+    });
+
+    return callbackRefID;
   }
 
   once(event, callback){
