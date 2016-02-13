@@ -14,20 +14,20 @@ const Pidgey = class {
   }
 
   trigger(event){
-    var args = Array.prototype.slice.call(arguments,1);
-    
-    var that = this;
-    return new Promise(function(resolve, reject){
-      var allCallbacks = that.callbacks.all || [];
-      var eventCallbacks = that.callbacks[event] || [];
-      var callbacks = allCallbacks.concat(eventCallbacks);
+    var allCallbacks = this.callbacks.all || [];
+    var eventCallbacks = this.callbacks[event] || [];
+    var callbacks = allCallbacks.concat(eventCallbacks);
 
-      args = [resolve, reject].concat(args);
-      callbacks.forEach(function(callback){
-        if(callback===null) return;
-        callback.apply(that, args);
+    var args = Array.prototype.slice.call(arguments,1);
+
+    var that = this;
+    return Promise.all(callbacks.map(function(callback){
+      return new Promise(function(resolve, reject){
+        if(callback === null) return;
+        var combinedArgs = [resolve, reject].concat(args);
+        callback.apply(that, combinedArgs);
       });
-    });
+    }));
   }
 
   on(event, callback){
