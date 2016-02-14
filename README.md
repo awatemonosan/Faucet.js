@@ -54,26 +54,26 @@ emitter.trigger('example3').then(function(){
 // "all callbacks were successful"
 
 emitter.on('example3', function(resolve, reject){
-  console.log("example3 has been triggered with and is being EXPLICITYLY resolved");
+  console.log("example3 has been triggered with and is being EXPLICITLY resolved");
   resolve();
 });
 emitter.trigger('example3').then(function(){
   console.log("all callbacks were successful");
 });
 // "example3 has been triggered with and is being implicitly resolved"
-// "example3 has been triggered with and is being EXPLICITYLY resolved"
+// "example3 has been triggered with and is being EXPLICITLY resolved"
 // "all callbacks were successful"
 
 emitter.on('example3', function(resolve, reject){
-  console.log("example3 has been triggered with and is being EXPLICITYLY rejected");
+  console.log("example3 has been triggered with and is being EXPLICITLY rejected");
   reject();
 });
 emitter.trigger('example3').then(function(){
   console.log("all callbacks were successful");
 });
 // "example3 has been triggered with and is being implicitly resolved"
-// "example3 has been triggered with and is being EXPLICITYLY resolved"
-// "example3 has been triggered with and is being EXPLICITYLY rejected"
+// "example3 has been triggered with and is being EXPLICITLY resolved"
+// "example3 has been triggered with and is being EXPLICITLY rejected"
 ```
 
 ## Tests
@@ -92,3 +92,4 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 * 0.1.2 Better Readme formatting
 * 0.1.8 Fixes. Made triggers return promises correctly. Add more test
 * 0.1.9 Fixed trigger to use a Promise.race instead of a Promise.all
+* 0.1.10 Bug fixes

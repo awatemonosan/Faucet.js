@@ -26,12 +26,8 @@ const Pidgey = class {
     var promises = callbacks.map(function(callback){
       return new Promise(function(resolve, reject){
         if(callback === null) return;
-        var rejected = false;
-        var rejectWrapper = function(){
-          rejected = true;
-        };
         var combinedArgs = [resolve, reject].concat(args);
-        callback.callback.apply(that, combinedArgs);
+        callback.apply(that, combinedArgs);
       });
     });
 
