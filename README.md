@@ -91,3 +91,4 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 * 0.1.1 Readme fix, better usage example
 * 0.1.2 Better Readme formatting
 * 0.1.8 Fixes. Made triggers return promises correctly. Add more test
+* 0.1.9 Fixed trigger to use a Promise.race instead of a Promise.all
